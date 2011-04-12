@@ -1,0 +1,54 @@
+#master_header {
+  background-color: #707070;
+  background-image: url('/images/download.jpg');
+  margin: 0;
+  padding: 10px;
+}
+#master_header .title {
+  font-size: 15pt;
+  margin-top: 10px;
+  color: white;
+  float: right;
+}
+#master_header img {
+  margin: 10px;
+}
+#content {
+  margin: 20px;
+}
+body {
+  background: #eee;
+  padding: 0;
+  margin: 0;
+}
+table {
+  border-spacing: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border: groove 2px #ccc;
+}
+table td, table th {
+  border: inset 1px #888;
+  padding: 5px;
+  background: #f2f2f2;
+}
+table tr:nth-child(odd) td {
+  background: white;
+}
+table th {
+  background: #555;
+  color: white;
+}
+#content table td ul li {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+#content table td ul {
+  margin: 0;
+  padding: 0 0 0 15px;
+  text-align: left;
+}
+.center {
+  text-align: center;
+}

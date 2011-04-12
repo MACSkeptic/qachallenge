@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this QA from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :interests  %><br />
+    <input type="checkbox" value="Selenium" id="selenium" name="interests[]" />
+    <label for="selenium">Selenium</label><br />
+    <input type="checkbox" value="Watir" id="watir" name="interests[]" />
+    <label for="watir">Watir</label><br />
+    <input type="checkbox" value="Webdriver" id="webdriver" name="interests[]" />
+    <label for="webdriver">Webdriver</label><br />
+    <input type="checkbox" value="Capybara" id="capybara" name="interests[]" />
+    <label for="capybara">Capybara</label><br />
+    <input type="checkbox" value="Cucumber" id="cucumber" name="interests[]" />
+    <label for="cucumber">Cucumber</label><br />
+  </div>
+  <div class="actions">
+    <%= f.submit 'Register' %>
+  </div>
+<% end %>

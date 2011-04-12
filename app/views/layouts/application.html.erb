@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ThoughtWorks - QA Challenge</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="master_header">
+    <img src="/images/corporate_logo.png"/>
+    <span class="title">Quality Assurance Challenge</span>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

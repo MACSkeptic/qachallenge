@@ -1,0 +1,27 @@
+<h1>Listing QAs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+    <th>Interests</th>
+    <th>Admin?</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.birthday %></td>
+    <td>
+      <ul>
+        <% user.interests.each do |i| %>
+          <li><%= i.name %></li>
+        <% end %>
+      </ul>
+    </td>
+    <td class="center"><%= user.admin? ? 'Yes' : 'No' %></td>
+  </tr>
+<% end %>
+</table>
