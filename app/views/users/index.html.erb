@@ -4,16 +4,15 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Birthday</th>
     <th>Interests</th>
     <th>Admin?</th>
+    <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%=raw user.name %></td>
     <td><%= user.email %></td>
-    <td><%= user.birthday %></td>
     <td>
       <ul>
         <% user.interests.each do |i| %>
@@ -22,6 +21,7 @@
       </ul>
     </td>
     <td class="center"><%= user.admin? ? 'Yes' : 'No' %></td>
+    <td><a href="users/<%= user.id %>">Details</a></td>
   </tr>
 <% end %>
 </table>

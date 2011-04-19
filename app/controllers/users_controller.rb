@@ -41,6 +41,7 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    @user.name.gsub!(/drop|alter/i, '[very nice try]') if @user.name
 
     respond_to do |format|
       if @user.save
@@ -52,6 +53,8 @@ class UsersController < ApplicationController
             @user.interests << Interest.new(:name => interest)
           end
         end
+
+        logger.info(User.find_by_sql("select * from users where name = '" + @user.name + "'"))
         format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else

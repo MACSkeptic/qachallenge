@@ -2,6 +2,7 @@ TwQaThingy::Application.routes.draw do
   resources :interests
   resources :users
   root :to => "welcome#index"
+  match 'reset' => "welcome#reset"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

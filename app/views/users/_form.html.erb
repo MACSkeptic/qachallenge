@@ -35,6 +35,10 @@
     <input type="checkbox" value="Cucumber" id="cucumber" name="interests[]" />
     <label for="cucumber">Cucumber</label><br />
   </div>
+  <div class="field">
+    <%= f.label :about  %><br />
+    <%= f.text_area :about %>
+  </div>
   <div class="actions">
     <%= f.submit 'Register' %>
   </div>
